@@ -1,0 +1,10 @@
+ipconfig/ ifconfig
+ping
+getmac
+hostname
+systeminfo
+nslookup
+tracert/traceroute
+netstat
+pathping
+arp
