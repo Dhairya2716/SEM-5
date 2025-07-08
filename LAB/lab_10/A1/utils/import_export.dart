@@ -1,0 +1,9 @@
+export './string.dart';
+export '../database/getx_insert_student_database.dart';
+export '../getx_insert_student_controller.dart';
+export '../getx_insert_student_model.dart';
+export '../getx_insert_student_view.dart';
+export 'package:get/get.dart';
+export 'package:sqflite/sqflite.dart';
+export 'package:path/path.dart';
+export 'package:flutter/material.dart';
