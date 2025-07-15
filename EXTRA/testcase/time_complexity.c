@@ -199,7 +199,7 @@
 //     return 0;
 // }
 
-
+// =================================================================================
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -301,6 +301,40 @@ void quick_sort(int arr[], int low, int high) {
     }
 }
 
+void merge(int arr[], int l, int m, int r){
+    int n1 = m - l + 1;
+    int n2 = r - m;
+
+    int L[n1];
+    int R[n2];
+
+    for(int i = 0;i<n1;i++) L[i] = arr[l + i];
+
+    for(int j = 0;j<n2;j++) R[j] = arr[m + j + 1];
+
+    int i = 0, j = 0, k = l;
+
+    while(i < n1 && j < n2){
+        if(L[i] <= R[j]) arr[k++] = arr[i++];
+        else arr[k++] = arr[j++];
+    }
+
+    while(i < n1) arr[k++] = arr[i++];
+
+    while(j < n2) arr[k++] = arr[j++];
+
+}
+
+void merge_sort(int arr[], int left, int right){
+    if(left < right){
+        int mid = left + (right - left) / 2;
+
+        merge_sort(arr, left, mid);
+        merge_sort(arr, mid+1, right);
+        merge(arr, left, mid, right);
+    }
+}
+
 void generate_test_files(int n) {
     FILE *f;
 
@@ -332,7 +366,7 @@ void read_array_from_file(const char *filename, int arr[], int n) {
 }
 
 int main() {
-    int n = 10000;
+    int n = 100000;
     int arr[n];
     int choice_sort;
     clock_t start, end;
@@ -342,7 +376,7 @@ int main() {
 
     generate_test_files(n);
 
-    printf("Choose a method to sort:\n1. Heap Sort\n2. Bubble Sort\n3. Insertion Sort\n4. Selection Sort\n5. Quick Sort\n");
+    printf("Choose a method to sort:\n1. Heap Sort\n2. Bubble Sort\n3. Insertion Sort\n4. Selection Sort\n5. Quick Sort\n6. Merge Sort\n");
     scanf("%d", &choice_sort);
 
     char *cases[] = {"best.txt", "average.txt", "worst.txt"};
@@ -368,6 +402,9 @@ int main() {
                 break;
             case 5:
                 quick_sort(arr, 0, n - 1);
+                break;
+            case 6:
+                merge_sort(arr, 0, n-1);
                 break;
             default:
                 printf("Invalid choice\n");
