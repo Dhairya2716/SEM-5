@@ -1,6 +1,7 @@
 {
   "version": "0.2.0",
   "configurations": [
+    
     {
       "name": "C/C++ Runner: Debug Session",
       "type": "cppdbg",
@@ -8,8 +9,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/WELCOME/Desktop/Darshan/SEM-5/DAA/Codes/EXTRA",
-      "program": "c:/Users/WELCOME/Desktop/Darshan/SEM-5/DAA/Codes/EXTRA/build/Debug/outDebug",
+      "cwd": "c:/Users/WELCOME/Desktop/Darshan/SEM-5/DAA/Codes/LAB/lab_6",
+      "program": "c:/Users/WELCOME/Desktop/Darshan/SEM-5/DAA/Codes/LAB/lab_6/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
