@@ -8,7 +8,6 @@ class Node {
         this.data = data;
         left = right = null;
     }
-
 }
 
 public class mirror_binary_tree {
