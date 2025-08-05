@@ -366,7 +366,7 @@ void read_array_from_file(const char *filename, int arr[], int n) {
 }
 
 int main() {
-    int n = 100000;
+    int n = 10000;
     int arr[n];
     int choice_sort;
     clock_t start, end;
